@@ -39,6 +39,7 @@
       "typeorm": "0.2.25"
    },
    "scripts": {
+      "watch-server": "env GOOGLE_APPLICATION_CREDENTIALS=/home/UTurn-a7115de77b42.json nodemon --config nodemon.json -e ts -w ./ -x npm run watch:serve",
       "watch": "env GOOGLE_APPLICATION_CREDENTIALS=/Users/vancerbtw/Documents/UTurn-a7115de77b42.json nodemon --config nodemon.json -e ts -w ./ -x npm run watch:serve",
       "watch:serve": "ts-node ./src/index.ts",
       "dev": "ts-node-dev --ignore-watch .next --ignore-watch node_modules --ignore-watch ./temp src/index.ts -P tsconfig.json"
