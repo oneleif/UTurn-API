@@ -8,8 +8,9 @@ import { auth as authV1 } from "./routes/Auth";
 import { resources as resourcesV1 } from "./routes/Resources";
 import { content as contentV1 } from "./routes/Content";
 import { cars as carsV1 } from "./routes/Cars";
-import { me as meV1 } from './routes/me';
+import { me as meV1 } from './routes/Me';
 import { sof as sofV1 } from './routes/Sofia';
+import { explore as exploreV1 } from "./routes/Explore";
 
 dotenv.config();
 createConnection();
@@ -33,6 +34,7 @@ app.use("/v1/content", contentV1);
 app.use("/v1/cars", carsV1);
 app.use("/v1/me", meV1);
 app.use("/v1/sofia", sofV1);
+app.use("/v1/explore", exploreV1);
 // ...
 
 // start express server
