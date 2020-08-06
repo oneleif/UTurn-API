@@ -23,11 +23,11 @@ sof.post("/conversate", auth, async (req, res) => {
   const responses = await sessionClient.detectIntent(request);
   const result = responses[0].queryResult;
 
-  let response = result.fulfillmentText;
+  let response = { response: result.fulfillmentText }
 
   if (Actions[result.intent.displayName]) {
     response = await Actions[result.intent.displayName](req.user, result.fulfillmentText);
   }
 
-  return res.status(200).json({ success : true, response });
+  return res.status(200).json({ success : true, ...response });
 });
